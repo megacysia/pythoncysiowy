@@ -17,7 +17,7 @@ while True:
             wydatki.append(koszt)
         break
     except ValueError:
-        print("Wprowadzaj tylko liczby. Wprowadz wydatki jeszcze raz")
+        print("Wprowadzaj tylko liczby.")
 
 
 srednikoszt = sum(wydatki) / len(wydatki)
