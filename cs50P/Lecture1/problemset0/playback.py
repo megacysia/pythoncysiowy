@@ -1,6 +1,6 @@
 def wolniej(x):
     print(x)
     
-dupa = input("Say something ").replace(' ', '...')
+x = input("Say something ").replace(' ', '...')
 
-wolniej(dupa)
+wolniej(x)

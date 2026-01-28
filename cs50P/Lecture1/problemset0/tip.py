@@ -5,11 +5,11 @@ def main():
     print(f"Leave ${tip:.2f}")
     
 def dollars_to_float(d):
-    dupa = float(f"{d}".replace("$", ""))
-    return round(dupa, 1)
+    x = float(f"{d}".replace("$", ""))
+    return round(x, 1)
     
 def percent_to_float(p):
-    dupadupa = float((f"{p}".replace("%", "")))
-    return dupadupa / 100
+    x = float((f"{p}".replace("%", "")))
+    return x / 100
     
 main()

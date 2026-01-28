@@ -21,7 +21,7 @@ elif second == "/" and last != 0:
     xyz = float(xyz)
     print(f"Wynik: {xyz:.1f}")
 else:
-    print("dupadupa")
+    print("xxx")
     
     
     
