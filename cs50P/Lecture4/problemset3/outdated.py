@@ -20,3 +20,47 @@
 # ]
 
 # Then output that same date in YYYY-MM-DD format. If the user’s input is not a valid date in either format, prompt the user again. Assume that every month has no more than 31 days; no need to validate whether a month has 28, 29, 30, or 31 days.
+
+def main():
+    miesiac, dzien, rok = get_date()
+    print(f"{rok}-{miesiac}-{dzien}")
+
+def get_date():
+    
+    calendar = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ]
+    while True:
+        try:
+            data = input("Date: ")
+            rest, year = data.split(",")
+            month, day = rest.split(" ")
+            if month in calendar:
+                return month, day, year
+    
+        except ValueError:
+            try:
+                month, day, year = data.split("/")
+                day = int(day)
+                if day <= 31:
+                    return month, day, year
+                else:
+                    pass
+            except ValueError:
+                pass
+        
+        except TypeError:
+            pass
+
+main()
