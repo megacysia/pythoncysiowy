@@ -13,8 +13,8 @@
 #ale problem jest tak, ze jakbym chciala posortowac liste, to sie tak z tym with open nie da bo nie ma jak, wiec:
 
 names = []
-
-with open("names.txt") as file: #r nie jest konieczne bo jesst domyslene 
+#r nie jest konieczne bo jesst domyslene 
+with open("names.txt") as file: 
     for line in file:
         names.append(line.rstrip())
 
