@@ -41,5 +41,5 @@ with open("students.csv") as file:
 def get_name(student):
         return student["name"]   
 
-for student in sorted(students, key=get_name):
+for student in sorted(students, key=get_name): #mozna tez wyrzucic całą funkcję get name i tutaj zamiast ywołania jej napisać key=lambda student: student["name"]
     print(f"{student['name']} is in {student['house']}")
