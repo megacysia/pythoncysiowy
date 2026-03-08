@@ -4,20 +4,25 @@
 
 import sys
 
-program = sys.argv[1]
+try:
+    program = sys.argv[1]
 
-if len(sys.argv) == 2 and sys.argv[1].endswith(".py"):
-    try:
-        with open(sys.argv[1]) as file:
-            x = 0
-            for row in file:
-                row = row.replace(" ", "")
-                if not row.startswith('#') and row != '\n':
-                    x = x + 1
-            print(x)
-    except FileNotFoundError:
-        print("Nie ma takiego pliku")
+    if len(sys.argv) == 2 and sys.argv[1].endswith(".py"):
+        try:
+            with open(sys.argv[1]) as file:
+                x = 0
+                for row in file:
+                    row = row.replace(" ", "")
+                    if not row.startswith('#') and row != '\n':
+                        x = x + 1
+                print(x)
+        except FileNotFoundError:
+            print("Nie ma takiego pliku")
+            sys.exit()
+    else:
+        print("wpisz tylko nazwę programu")
         sys.exit()
-else:
-    print("wpisz tylko nazwę programu")
+
+except IndexError:
+    print("wpisz cokolwiek?")
     sys.exit()
