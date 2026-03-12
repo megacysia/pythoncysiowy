@@ -17,3 +17,34 @@
 #Assume that the input will be a photo of someone posing in just the right way, like these demos, so that, when they’re resized and cropped, the shirt appears to fit perfectly.
 
 #If you’d like to run your program on a photo of yourself, first drag the photo over to VS Code’s file explorer, into the same folder as shirt.py. No need to submit any photos with your code. But, if you would like, you’re welcome (but not expected) to share a photo of yourself wearing your virtual shirt in any of CS50’s communities!
+
+import sys
+from PIL import Image, ImageOps
+
+
+if len(sys.argv) != 3:
+    sys.exit("Invalid number of arguments")
+
+input_file = sys.argv[1]
+output_file = sys.argv[2]
+
+valid_extensions = (".jpg", ".jpeg", ".png")
+
+if not input_file.lower().endswith(valid_extensions) or not output_file.lower().endswith(valid_extensions):
+    sys.exit("Invalid file extension")
+
+if input_file.lower().split(".")[-1] != output_file.lower().split(".")[-1]:
+    sys.exit("Input and output have different extensions")
+
+try:
+    input_image = Image.open(input_file)
+except FileNotFoundError:
+    sys.exit("Input file does not exist")
+
+shirt = Image.open("shirt.png")
+
+resized = ImageOps.fit(input_image, shirt.size)
+
+resized.paste(shirt, shirt)
+
+resized.save(output_file)
