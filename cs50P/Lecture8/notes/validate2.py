@@ -6,7 +6,7 @@ email = input("What's your email? ").strip()
 # else:
 #     print("Invalid")
 
-if re.search(r"^\w+@\w+\.edu$", email): #ten \w to litery i numery
+if re.search(r"^[a-zA-Z0-9_ ]+@\w+\.(com|edu|gov|net|org)$", email): #ten \w to litery i numery ; zamiast [a-zA-Z0-9_ ] zby miec spacje mozna tez (\w|\s), bo \s to whitespace
     print("Valid")
 else:
     print("Invalid")
@@ -17,3 +17,6 @@ else:
 # \S not a whitespace character
 # \w word character... as well as numbers and the underscore
 # \W not a word character
+# A|B either A or B
+# (...) a group
+# (?:...) non-capturing version
