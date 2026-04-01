@@ -1,5 +1,7 @@
 class Student: 
-    ...
+    def __init__(self, name, house):
+        self.name = self.name
+        self.house = house
 
 def main():
     student = get_student()
@@ -7,10 +9,9 @@ def main():
     
     
 def get_student():
-    uczen = Student()
-    uczen.name = input("Name: ")
-    uczen.house = input("House: ")
-    return uczen
+    name = input("Name: ")
+    house = input("House: ")
+    return Student(name, house)
 
 if __name__ == "__main__":
     main()
