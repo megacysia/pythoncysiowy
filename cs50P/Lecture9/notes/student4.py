@@ -7,10 +7,10 @@ def main():
     
     
 def get_student():
-    uczen = Student()
-    uczen.name = input("Name: ")
-    uczen.house = input("House: ")
-    return uczen
+    student = Student()
+    student.name = input("Name: ")
+    student.house = input("House: ")
+    return student
 
 if __name__ == "__main__":
     main()

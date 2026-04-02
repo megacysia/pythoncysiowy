@@ -2,7 +2,7 @@ def main():
     student = get_student()
     if student["name"] == "Padma":
         student["house"] = "Ravenclaw"
-    print(f"{student['name']} from {student['house']}")
+    print(f"{student['name']} from {student['house']}") #bo nie mozna "" w "" i dlatego są pojedyncze w
     
     
 def get_student():
